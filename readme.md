@@ -5,5 +5,5 @@ Shift Awal          : I
 Shift Baru          : H
 
 # Screenshot
-## Display  Pertemuan 2  
+## Display  Pertemuan 1  
 ![Image 1](Pertemuan-1.jpg)
