@@ -1,7 +1,10 @@
 # Identitas
 Nama                : Khoiri Faldi Marwan Hakim
-NIM                 : H1D024105 
+
+NIM                 : H1D024105
+
 Shift Awal          : I
+
 Shift Baru          : H
 
 # Screenshot
