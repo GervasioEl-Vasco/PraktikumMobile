@@ -18,6 +18,8 @@ import com.example.jualan.ui.screen.DaftarProdukScreen
 import com.example.jualan.ui.screen.DetailProductScreen
 import com.example.jualan.ui.screen.HubungiKamiScreen
 import com.example.jualan.ui.theme.JualanTheme
+import com.example.jualan.ui.viewmodel.ProductViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
 
 class HomeActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,6 +36,7 @@ class HomeActivity : ComponentActivity() {
 @Composable
 fun HomeNavigation() {
     val navController = rememberNavController()
+    val productViewModel: ProductViewModel = viewModel()
 
     Surface(
         modifier = Modifier.fillMaxSize(),
@@ -44,7 +47,10 @@ fun HomeNavigation() {
             startDestination = "daftar_produk"
         ) {
             composable("daftar_produk") {
-                DaftarProdukScreen(navController = navController)
+                DaftarProdukScreen(
+                    navController = navController,
+                    viewModel = productViewModel
+                )
             }
             composable(
                 route = "detail/{productId}",
@@ -53,7 +59,8 @@ fun HomeNavigation() {
                 val productId = backStackEntry.arguments?.getInt("productId") ?: 0
                 DetailProductScreen(
                     productId = productId,
-                    navController = navController
+                    navController = navController,
+                    viewModel = productViewModel
                 )
             }
             composable("form_screen") {
